@@ -43,26 +43,17 @@ let prizeArray = [
 ];
 
 function spinBtnHandler(e) {
-  //   console.log("Rotate the Wheel!");
-  //   console.log(e.target);
-  //   coloredCircle.classList.add("rotating-wheel");
   let rotatingFactor = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
   console.log(rotatingFactor);
   let rotatingDegree = 360 * 3 + rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
-
-  //   setTimeout(() => {
-  // coloredCircle.classList.remove("rotating-wheel");
-  //   }, 1000);
-  //   coloredCircle.style.transform = "translate(180 dwg)";
   setTimeout(() => {
     showPrize(rotatingFactor);
-  }, 2000);
+  }, 4000);
 }
 
 function showPrize(rotatingFactor) {
-  //   console.log("Let distribute prize");
   let prizeVal = 0;
   prizeModal.classList.add("show-prize-modal");
 
@@ -76,7 +67,6 @@ function showPrize(rotatingFactor) {
 }
 
 function spinAgain() {
-  // console.log("Wanna Spin Again!");
   prizeModal.classList.remove("show-prize-modal");
   window.location.reload();
 }
