@@ -262,11 +262,50 @@
   z-index: 150;
 }
 
+#prize-span {
+  margin-top: 20%;
+  border-bottom: 2px solid green;
+}
+
 .show-prize-modal button {
   margin: 5px 10px;
   padding: 5px 10px;
   border: 2px solid red;
   border-radius: 10px;
   cursor: pointer;
+  margin-top: -10%;
   /* z-index: 10000; */
+}
+
+@media only screen and (max-width: 300px) {
+  .show-prize-modal {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    height: 45%;
+    width: 90%;
+    transform: translate(-56%, -56%);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .show-prize-modal {
+    position: absolute;
+    top: 57%;
+    left: 55%;
+    height: 60%;
+    width: 85%;
+    transform: translate(-57%, -55%);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .show-prize-modal {
+    position: absolute;
+    top: 57%;
+    left: 55%;
+    height: 43%;
+    width: 84%;
+    transform: translate(-56%, -56%);
+  }
 }
