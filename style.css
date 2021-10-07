@@ -184,7 +184,6 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ccc;
   width: 60%;
   height: 50%;
   border-radius: 50%;
@@ -192,17 +191,19 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color: #fff;
   font-weight: 600;
   font-size: 24px;
   margin: 0 auto;
   text-align: center;
   z-index: 150;
+  opacity: 0.8;
 }
 
 #prize-span {
   margin-top: 20%;
-  border-bottom: 2px solid #fff;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  /* border-bottom: 2px solid #fff; */
 }
 
 .show-prize-modal button {
