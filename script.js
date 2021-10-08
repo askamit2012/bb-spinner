@@ -68,6 +68,7 @@ function showPrize(rotatingFactor) {
       prizeModal.style.backgroundColor = prize.colorCode;
       //   spinAgainBtn.style.background = prize.colorCode;
       spinAgainBtn.style.color = "#fff";
+      //   spinAgainBtn.style.borderBottom = "2px solid red";
     }
   });
   prizeSpan.innerHTML = `You Won ${prizeVal} rupees!`;
