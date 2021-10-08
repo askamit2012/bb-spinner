@@ -3,6 +3,7 @@ let coloredCircle = document.querySelector(".colored-circle");
 let spinAgainBtn = document.getElementById("spin-again-btn");
 let prizeModal = document.querySelector("#prize-modal");
 let prizeSpan = document.querySelector("#prize-span");
+let lottie = document.getElementById("lottie");
 let prizeArray = [
   {
     id: 6,
@@ -49,8 +50,12 @@ function spinBtnHandler(e) {
   let rotatingDegree = 360 * 3 + rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
   setTimeout(() => {
+    lottie.classList.remove("hide-lottie");
+  }, 3000);
+  setTimeout(() => {
     showPrize(rotatingFactor);
-  }, 4000);
+    lottie.classList.add("hide-lottie");
+  }, 6000);
 }
 
 function showPrize(rotatingFactor) {
