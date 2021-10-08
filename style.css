@@ -214,28 +214,28 @@
     border-left: 4px solid transparent;
   }
   25% {
-    border-bottom: 4px solid red;
+    border-bottom: 4px solid #fff;
     border-right: 4px solid transparent;
     border-top: 4px solid transparent;
     border-left: 4px solid transparent;
   }
   50% {
     border-bottom: 4px solid transparent;
-    border-right: 4px solid red;
+    border-right: 4px solid #fff;
     border-top: 4px solid transparent;
     border-left: 4px solid transparent;
   }
   75% {
     border-bottom: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 4px solid red;
+    border-top: 4px solid #fff;
     border-left: 4px solid transparent;
   }
   100% {
     border-bottom: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 4px solid transparent;
-    border-left: 4px solid red;
+    border-left: 4px solid #fff;
   }
 }
 
