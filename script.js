@@ -57,8 +57,8 @@ function spinBtnHandler(e) {
   let rotatingFactor = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
   console.log("RF", rotatingFactor);
-  // let rotatingDegree = 7200 + rotatingFactor * 60;
-  let rotatingDegree = rotatingFactor * 60;
+  let rotatingDegree = 7200 + rotatingFactor * 60;
+  // let rotatingDegree = rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
 
   showPrize(rotatingFactor);
