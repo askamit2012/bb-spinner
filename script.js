@@ -48,15 +48,15 @@ function spinBtnHandler(e) {
   let rotatingFactor = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
   console.log(rotatingFactor);
-  let rotatingDegree = 360 * 3 + rotatingFactor * 60;
+  let rotatingDegree = 360 * 20 + rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
   // setTimeout(() => {
   //   lottie.classList.remove("hide-lottie");
   // }, 3000);
-  setTimeout(() => {
-    showPrize(rotatingFactor);
-    // lottie.classList.add("hide-lottie");
-  }, 10000);
+  // setTimeout(() => {
+  showPrize(rotatingFactor);
+  // lottie.classList.add("hide-lottie");
+  // }, 7000);
 }
 
 function showPrize(rotatingFactor) {
@@ -66,8 +66,8 @@ function showPrize(rotatingFactor) {
     modalContainer.classList.add("six");
     setTimeout(function () {
       modalContainer.classList.remove("six");
-    }, 2000);
-  }, 5000);
+    }, 5000);
+  }, 7000);
 
   prizeArray.forEach((prize) => {
     if (prize.id === rotatingFactor) {
