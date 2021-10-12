@@ -7,6 +7,7 @@ let modalSVG = document.querySelector(".modal-svg");
 let modalRect = document.querySelector("#modal-rect");
 let couponCode = document.querySelector("#coupon-code");
 let copyCouponIcon = document.querySelector(".copy-icon");
+let prizeMoney = document.querySelector("#prize-money");
 var prizeIndex = 0;
 let prizeArray = [
   {
@@ -74,6 +75,7 @@ function showPrize(rotatingFactor) {
     if (prize.id === rotatingFactor) {
       prizeVal = prize.value;
       couponCode.innerText = prize.couponCode;
+      prizeMoney.innerText = `₹ ${prize.value}`;
       modal.style.zIndex = 100000;
       modalRect.style.fill = prize.colorCode;
       modalSVG.style.fill = prize.colorCode;
