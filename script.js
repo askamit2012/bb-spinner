@@ -1,9 +1,10 @@
 const spinBtn = document.getElementById("spin-button");
 let coloredCircle = document.querySelector(".colored-circle");
-let spinAgainBtn = document.getElementById("spin-again-btn");
-let prizeModal = document.querySelector("#prize-modal");
-let prizeSpan = document.querySelector("#prize-span");
-let lottie = document.getElementById("lottie");
+// let spinAgainBtn = document.getElementById("spin-again-btn");
+// let prizeModal = document.querySelector("#prize-modal");
+// let prizeSpan = document.querySelector("#prize-span");
+// let lottie = document.getElementById("lottie");
+let modalContainer = document.getElementById("modal-container");
 let prizeArray = [
   {
     id: 6,
@@ -49,18 +50,24 @@ function spinBtnHandler(e) {
   console.log(rotatingFactor);
   let rotatingDegree = 360 * 3 + rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
-  setTimeout(() => {
-    lottie.classList.remove("hide-lottie");
-  }, 3000);
+  // setTimeout(() => {
+  //   lottie.classList.remove("hide-lottie");
+  // }, 3000);
   setTimeout(() => {
     showPrize(rotatingFactor);
-    lottie.classList.add("hide-lottie");
-  }, 6000);
+    // lottie.classList.add("hide-lottie");
+  }, 10000);
 }
 
 function showPrize(rotatingFactor) {
   let prizeVal = 0;
-  prizeModal.classList.add("show-prize-modal");
+  // prizeModal.classList.add("show-prize-modal");
+  setTimeout(() => {
+    modalContainer.classList.add("six");
+    setTimeout(function () {
+      modalContainer.classList.remove("six");
+    }, 2000);
+  }, 5000);
 
   prizeArray.forEach((prize) => {
     if (prize.id === rotatingFactor) {
@@ -74,10 +81,18 @@ function showPrize(rotatingFactor) {
   prizeSpan.innerHTML = `You Won ${prizeVal} rupees!`;
 }
 
-function spinAgain() {
-  prizeModal.classList.remove("show-prize-modal");
-  window.location.reload();
-}
+// function spinAgain() {
+//   prizeModal.classList.remove("show-prize-modal");
+//   window.location.reload();
+// }
 
 spinBtn.addEventListener("click", (e) => spinBtnHandler(e));
-spinAgainBtn.addEventListener("click", spinAgain);
+// spinAgainBtn.addEventListener("click", spinAgain);
+
+// new Modal
+// setTimeout(() => {
+//   modalContainer.classList.add("six");
+//   setTimeout(function () {
+//     modalContainer.classList.remove("six");
+//   }, 2000);
+// }, 5000);
