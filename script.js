@@ -7,50 +7,58 @@ let modalSVG = document.querySelector(".modal-svg");
 let modalRect = document.querySelector("#modal-rect");
 let couponCode = document.querySelector("#coupon-code");
 let copyCouponIcon = document.querySelector(".copy-icon");
+var prizeIndex = 0;
 let prizeArray = [
-  {
-    id: 6,
-    color: "green",
-    colorCode: "#2CCCC1",
-    value: "100",
-  },
-  {
-    id: 5,
-    color: "blue",
-    colorCode: "#8E84E1",
-    value: "200",
-  },
-  {
-    id: 4,
-    color: "purple",
-    colorCode: "#D382E7",
-    value: "300",
-  },
-  {
-    id: 3,
-    color: "red",
-    colorCode: "#DB5F7D",
-    value: "400",
-  },
-  {
-    id: 2,
-    color: "brick",
-    colorCode: "#E38974",
-    value: "500",
-  },
   {
     id: 1,
     color: "yellow",
     colorCode: "#EBC845",
     value: "100",
+    couponCode: "BB100",
+  },
+  {
+    id: 2,
+    color: "brick",
+    colorCode: "#E38974",
+    value: "200",
+    couponCode: "BB200",
+  },
+  {
+    id: 3,
+    color: "red",
+    colorCode: "#DB5F7D",
+    value: "300",
+    couponCode: "BB300",
+  },
+  {
+    id: 4,
+    color: "purple",
+    colorCode: "#D382E7",
+    value: "400",
+    couponCode: "BB400",
+  },
+  {
+    id: 5,
+    color: "blue",
+    colorCode: "#8E84E1",
+    value: "500",
+    couponCode: "BB500",
+  },
+  {
+    id: 6,
+    color: "green",
+    colorCode: "#2CCCC1",
+    value: "600",
+    couponCode: "BB600",
   },
 ];
 
 function spinBtnHandler(e) {
   let rotatingFactor = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
-  console.log(rotatingFactor);
-  let rotatingDegree = 360 * 20 + rotatingFactor * 60;
+  console.log("RF", rotatingFactor);
+  // let rotatingDegree = 7200 + rotatingFactor * 60;
+  let rotatingDegree = rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
 
   showPrize(rotatingFactor);
@@ -58,33 +66,24 @@ function spinBtnHandler(e) {
 
 function showPrize(rotatingFactor) {
   let prizeVal = 0;
-  // prizeModal.classList.add("show-prize-modal");
   setTimeout(() => {
     modalContainer.classList.add("six");
   }, 7000);
 
-  prizeArray.forEach((prize) => {
+  prizeArray.forEach((prize, index) => {
     if (prize.id === rotatingFactor) {
       prizeVal = prize.value;
-      // prizeModal.style.backgroundColor = prize.colorCode;
-      // modal.style.color = "#fff";
+      couponCode.innerText = prize.couponCode;
       modal.style.zIndex = 100000;
       modalRect.style.fill = prize.colorCode;
       modalSVG.style.fill = prize.colorCode;
-      // modal.style.color = "#fff";
-      // modalRect.style.stroke = "#fff";
-      //   spinAgainBtn.style.background = prize.colorCode;
-      // spinAgainBtn.style.color = "#fff";
-      //   spinAgainBtn.style.borderBottom = "2px solid red";
+      prizeIndex = prize.id;
     }
-    // couponCode.select();
-    // couponCode.setSelectionRange(0, 99999);
-    // navigator.clipboard.writeText(couponCode.value);
-    // alert("Copied the text: " + couponCode.value);
   });
 }
 
 spinBtn.addEventListener("click", (e) => spinBtnHandler(e));
 copyCouponIcon.addEventListener("click", function () {
-  console.log("please copy the Coupon!");
+  navigator.clipboard.writeText(couponCode.innerText);
+  alert(`code copied: ${prizeArray[prizeIndex - 1].couponCode}`);
 });
