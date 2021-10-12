@@ -54,8 +54,26 @@
       <div id="modal-container">
         <div class="modal-background">
           <div class="modal">
-            <h2>Congrats!</h2>
-            <p>You Won $</p>
+            <!-- <h2>Congrats!</h2>
+            <p>You Won <span id="prize-money"></span></p> -->
+            <div class="modal-content">
+              <h2>Congrats!</h2>
+              <p>
+                You Won <span id="prize-money"></span><br />
+                <span>off on your next order</span><br />
+                <span>Use Coupon code</span>
+                <span id="coupon-code">ABCD1234</span>
+                <img
+                  src="./assets/copy.png"
+                  class="copy-icon"
+                  alt="copy icon"
+                />
+              </p>
+            </div>
+            <!-- <span>off on your next order</span>
+            <span>Use Coupon code</span>
+            <span id="coupon-code"></span>
+            <button>copy code</button> -->
             <svg
               class="modal-svg"
               xmlns="http://www.w3.org/2000/svg"
@@ -64,11 +82,12 @@
               preserveAspectRatio="none"
             >
               <rect
+                id="modal-rect"
                 x="0"
                 y="0"
                 fill="none"
-                width="226"
-                height="162"
+                width="100%"
+                height="100%"
                 rx="3"
                 ry="3"
               ></rect>

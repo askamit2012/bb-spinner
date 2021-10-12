@@ -1,10 +1,12 @@
 const spinBtn = document.getElementById("spin-button");
 let coloredCircle = document.querySelector(".colored-circle");
-// let spinAgainBtn = document.getElementById("spin-again-btn");
-// let prizeModal = document.querySelector("#prize-modal");
-// let prizeSpan = document.querySelector("#prize-span");
-// let lottie = document.getElementById("lottie");
+
 let modalContainer = document.getElementById("modal-container");
+let modal = document.querySelector(".modal");
+let modalSVG = document.querySelector(".modal-svg");
+let modalRect = document.querySelector("#modal-rect");
+let couponCode = document.querySelector("#coupon-code");
+let copyCouponIcon = document.querySelector(".copy-icon");
 let prizeArray = [
   {
     id: 6,
@@ -50,13 +52,8 @@ function spinBtnHandler(e) {
   console.log(rotatingFactor);
   let rotatingDegree = 360 * 20 + rotatingFactor * 60;
   coloredCircle.style.transform = `rotate(${rotatingDegree}deg)`;
-  // setTimeout(() => {
-  //   lottie.classList.remove("hide-lottie");
-  // }, 3000);
-  // setTimeout(() => {
+
   showPrize(rotatingFactor);
-  // lottie.classList.add("hide-lottie");
-  // }, 7000);
 }
 
 function showPrize(rotatingFactor) {
@@ -64,35 +61,30 @@ function showPrize(rotatingFactor) {
   // prizeModal.classList.add("show-prize-modal");
   setTimeout(() => {
     modalContainer.classList.add("six");
-    setTimeout(function () {
-      modalContainer.classList.remove("six");
-    }, 5000);
   }, 7000);
 
   prizeArray.forEach((prize) => {
     if (prize.id === rotatingFactor) {
       prizeVal = prize.value;
-      prizeModal.style.backgroundColor = prize.colorCode;
+      // prizeModal.style.backgroundColor = prize.colorCode;
+      // modal.style.color = "#fff";
+      modal.style.zIndex = 100000;
+      modalRect.style.fill = prize.colorCode;
+      modalSVG.style.fill = prize.colorCode;
+      // modal.style.color = "#fff";
+      // modalRect.style.stroke = "#fff";
       //   spinAgainBtn.style.background = prize.colorCode;
-      spinAgainBtn.style.color = "#fff";
+      // spinAgainBtn.style.color = "#fff";
       //   spinAgainBtn.style.borderBottom = "2px solid red";
     }
+    // couponCode.select();
+    // couponCode.setSelectionRange(0, 99999);
+    // navigator.clipboard.writeText(couponCode.value);
+    // alert("Copied the text: " + couponCode.value);
   });
-  prizeSpan.innerHTML = `You Won ${prizeVal} rupees!`;
 }
 
-// function spinAgain() {
-//   prizeModal.classList.remove("show-prize-modal");
-//   window.location.reload();
-// }
-
 spinBtn.addEventListener("click", (e) => spinBtnHandler(e));
-// spinAgainBtn.addEventListener("click", spinAgain);
-
-// new Modal
-// setTimeout(() => {
-//   modalContainer.classList.add("six");
-//   setTimeout(function () {
-//     modalContainer.classList.remove("six");
-//   }, 2000);
-// }, 5000);
+copyCouponIcon.addEventListener("click", function () {
+  console.log("please copy the Coupon!");
+});
