@@ -29,7 +29,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   max-width: 100%;
   overflow: hidden;
   /* max-height: 100vh; */
@@ -176,40 +176,6 @@ body {
   object-fit: contain;
 }
 
-.show-prize-modal {
-  position: absolute;
-  top: 40%;
-  left: 0;
-  transform: translate(-60%, -60%);
-  width: 60%;
-  height: 50%;
-  /* border-radius: 50%; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  font-weight: 600;
-  font-size: 24px;
-  margin: 0 auto;
-  text-align: center;
-  z-index: 150;
-  opacity: 0.8;
-}
-
-#prize-span {
-  margin-top: 27.5%;
-  color: #fff;
-  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.9);
-  padding: 3%;
-  border-radius: 20px;
-  letter-spacing: 1px;
-  /* text-transform: uppercase; */
-  font-size: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  /* border-bottom: 2px solid #fff; */
-  font-family: "Ubuntu", sans-serif;
-}
-
 /* Media queries for the centre pin */
 
 @media only screen and (max-width: 500px) {
@@ -217,14 +183,6 @@ body {
     position: absolute;
     top: 56%;
     left: 58%;
-    transform: translate(-56%, -56%);
-  }
-  .show-prize-modal {
-    position: absolute;
-    top: 57%;
-    left: 55%;
-    height: 43%;
-    width: 84%;
     transform: translate(-56%, -56%);
   }
 }
@@ -236,14 +194,6 @@ body {
     left: 58%;
     transform: translate(-56%, -56%);
   }
-  .show-prize-modal {
-    position: absolute;
-    top: 55%;
-    left: 12%;
-    height: 60%;
-    width: 95%;
-    transform: translate(-10%, -50%);
-  }
 }
 
 @media only screen and (max-width: 300px) {
@@ -251,14 +201,6 @@ body {
     position: absolute;
     top: 56%;
     left: 60%;
-    transform: translate(-56%, -56%);
-  }
-  .show-prize-modal {
-    position: absolute;
-    top: 60%;
-    left: 55%;
-    height: 45%;
-    width: 90%;
     transform: translate(-56%, -56%);
   }
 }
@@ -272,22 +214,6 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-}
-
-/* lottie */
-
-.lottie {
-  position: absolute;
-  top: 60%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  height: 50%;
-  width: 50%;
-  z-index: 1000;
-}
-
-.hide-lottie {
-  display: none;
 }
 
 /* new modal */
@@ -355,9 +281,6 @@ body.modal-active {
 #modal-container .modal-background .modal {
   background: white;
   padding: 50px;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: flex-end; */
   display: inline-block;
   border-radius: 3px;
   font-weight: 300;
