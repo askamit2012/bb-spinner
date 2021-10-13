@@ -12,9 +12,9 @@ let modalContainer = document.getElementById("modal-container");
 //   modalContainer.classList.add(btnId);
 // });
 
-setTimeout(() => {
-  modalContainer.classList.add("six");
-  setTimeout(function () {
-    modalContainer.classList.remove("six");
-  }, 2000);
-}, 5000);
+// setTimeout(() => {
+//   modalContainer.classList.add("six");
+//   setTimeout(function () {
+//     modalContainer.classList.remove("six");
+//   }, 2000);
+// }, 5000);
