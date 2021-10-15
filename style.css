@@ -299,6 +299,8 @@ body.modal-active {
 .copy-icon {
   height: 22px;
   width: 22px;
+  cursor: pointer;
+  color: #fff;
 }
 
 #modal-container .modal-background .modal .modal-svg {

@@ -86,6 +86,6 @@ function showPrize(rotatingFactor) {
 spinBtn.addEventListener("click", (e) => spinBtnHandler(e));
 copyCouponIcon.addEventListener("click", function () {
   console.log(navigator);
-  navigator.clipboard.readText(couponCode.innerText);
+  navigator.clipboard.writeText(couponCode.innerText);
   // alert(`code copied: ${prizeArray[prizeIndex - 1].couponCode}`);
 });
